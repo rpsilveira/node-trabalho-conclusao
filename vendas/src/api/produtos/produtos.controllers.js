@@ -15,9 +15,9 @@ export default class ProdutosController {
   }
 
   async create(request, h) {
-    const post = await produtosBusiness.create(request);
+    const produto = await produtosBusiness.create(request);
 
-    return h.response(post).code(CREATED);
+    return h.response(produto).code(CREATED);
   }
 
   async update(request, h) {

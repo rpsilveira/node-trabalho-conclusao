@@ -1,26 +1,20 @@
 import { instances } from 'hapi-sequelizejs'
 import { getObjectOr404 } from '../utils/database.utils';
 
-const Produtos = instances.getModel('produtos');
+const Produto = instances.getModel('produto');
 
 export default class ProdutosDAO {
 
   async findAll(params) {
-    return Produtos.findAll({
-      where: params,
-      include: [ 'tags' ]
-    });
+    return Produto.findAll({ where });
   }
 
   async findByID(id) {
-    return getObjectOr404(Produtos, {
-      where: { id },
-      include: [ 'tags' ]
-    });
+    return getObjectOr404(Produto, { where });
   }
 
   async create(data) {
-    return Produtos.create(data);
+    return Produto.create(data);
   }
 
   async update(id, data) {

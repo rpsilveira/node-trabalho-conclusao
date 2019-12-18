@@ -6,17 +6,11 @@ const Categoria = instances.getModel('categoria');
 export default class CategoriasDAO {
 
   async findAll(params) {
-    return Categoria.findAll({
-      where: params,
-      include: [ 'tags' ]
-    });
+    return Categoria.findAll({ where });
   }
 
   async findByID(id) {
-    return getObjectOr404(Categoria, {
-      where: { id },
-      include: [ 'tags' ]
-    });
+    return getObjectOr404(Categoria, { where });
   }
 
   async create(data) {

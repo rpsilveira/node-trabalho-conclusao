@@ -1,15 +1,15 @@
 import { Model } from 'sequelize';
 
 export default (sequelize, dataTypes) => {
-  class Categorias extends Model {}
+  class Categoria extends Model {}
 
-  Categorias.init({
+  Categoria.init({
     descricao: dataTypes.STRING,
   }, { sequelize, modelName: 'categoria', tableName: 'categorias' });
 
-  Categorias.associate = models => {
-    models.categoria.belongsTo(models.produto);
-  };
+  /*Categoria.associate = models => {
+    models.categoria.hasMany(models.produto, { as: 'produtos' });
+  };*/
 
-  return Categorias;
+  return Categoria;
 };
