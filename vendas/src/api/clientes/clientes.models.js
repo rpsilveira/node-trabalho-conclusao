@@ -5,8 +5,10 @@ export default (sequelize, dataTypes) => {
   class Cliente extends Model {}
 
   Cliente.init({
+    nome: dataTypes.STRING,
+    cnpjcpf: dataTypes.STRING,
     email: dataTypes.STRING,
-    password: dataTypes.STRING
+    senha: dataTypes.STRING
   }, { sequelize, modelName: 'cliente', tableName: 'clientes' });
 
   /*Cliente.associate = models => {
@@ -14,9 +16,9 @@ export default (sequelize, dataTypes) => {
   };*/
 
   Cliente.addHook('beforeCreate', async (cliente) => {
-    const hash = await Bcrypt.hash(cliente.password, 10);
+    const hash = await Bcrypt.hash(cliente.senha, 10);
 
-    cliente.password = hash;
+    cliente.senha = hash;
   });
 
   return Cliente;
