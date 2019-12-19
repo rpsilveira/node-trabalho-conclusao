@@ -10,13 +10,13 @@ export function getToken(payload, options = {}) {
 }
 
 export async function authenticate({ email, password }) {
-  const model = instances.getModel('user');
-  const user = await getObjectOr404(model, { where: { email }});
-  const isValid = await Bcrypt.compare(password, user.password);
+  const model = instances.getModel('cliente');
+  const cliente = await getObjectOr404(model, { where: { email }});
+  const isValid = await Bcrypt.compare(password, cliente.password);
 
   if (!isValid) {
     throw Boom.notFound();
   }
 
-  return user;
+  return cliente;
 }

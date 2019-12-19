@@ -3,10 +3,10 @@ import HapiAuthJWT from 'hapi-auth-jwt2';
 import Env from './environment.config';
 
 const validate = async (decoded) => {
-  const User = instances.getModel('user');
-  const user = await User.findByPk(decoded.id);
-  const isValid = !!user;
-  const credentials = isValid ? user : null;
+  const Cliente = instances.getModel('cliente');
+  const cliente = await cliente.findByPk(decoded.id);
+  const isValid = !!cliente;
+  const credentials = isValid ? cliente : null;
 
   return { isValid, credentials };
 };
