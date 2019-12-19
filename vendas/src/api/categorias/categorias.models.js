@@ -5,11 +5,11 @@ export default (sequelize, dataTypes) => {
 
   Categoria.init({
     descricao: dataTypes.STRING,
-  }, { sequelize, modelName: 'categoria', tableName: 'categorias' });
+  }, { sequelize, modelName: 'categoria', tableName: 'tb_categorias' });
 
-  /*Categoria.associate = models => {
-    models.categoria.hasMany(models.produto, { as: 'produtos' });
-  };*/
+ /* Categoria.associate = models => {
+    models.categoria.hasMany(models.produto);
+  }; */
 
   return Categoria;
 };

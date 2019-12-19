@@ -6,14 +6,10 @@ export default (sequelize, dataTypes) => {
 
   Cliente.init({
     nome: dataTypes.STRING,
-    cnpjcpf: dataTypes.STRING,
-    email: dataTypes.STRING,
+    cnpjcpf: { type: dataTypes.STRING, unique: true },
+    email: { type: dataTypes.STRING, unique: true },
     senha: dataTypes.STRING
-  }, { sequelize, modelName: 'cliente', tableName: 'clientes' });
-
-  /*Cliente.associate = models => {
-    models.cliente.hasMany(models.post, { as: 'posts' });
-  };*/
+  }, { sequelize, modelName: 'cliente', tableName: 'tb_clientes' });
 
   Cliente.addHook('beforeCreate', async (cliente) => {
     const hash = await Bcrypt.hash(cliente.senha, 10);

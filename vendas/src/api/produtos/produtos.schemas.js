@@ -6,7 +6,9 @@ const params = Joi.object({
 
 const payload = Joi.object({
   descricao: Joi.string().min(3).required(),
-  valor: Joi.number().required()
+  quantidade: Joi.number().required(),
+  valor: Joi.number().required(),
+  categoriaId: Joi.number().required()
 });
 
 export const detail = {

@@ -5,12 +5,20 @@ export default (sequelize, dataTypes) => {
 
   Produto.init({
     descricao: dataTypes.STRING,
-    valor: dataTypes.FLOAT
-  }, { sequelize, modelName: 'produto', tableName: 'produtos' });
+    quantidade: dataTypes.FLOAT,
+    valor: dataTypes.FLOAT,
+    categoriaId: { 
+      type: dataTypes.INTEGER,
+      references: {
+        model: 'tb_categorias',
+        key: 'id'
+      }
+    }
+  }, { sequelize, modelName: 'produto', tableName: 'tb_produtos' });
 
-  Produto.associate = models => {
+ /* Produto.associate = models => {
     models.produto.belongsTo(models.categoria);
-  };
+  }; */
 
   return Produto;
 };

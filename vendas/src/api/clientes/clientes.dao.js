@@ -17,14 +17,14 @@ export default class ClientesDAO {
     return Cliente.create(data);
   }
 
-  async update(where, data) {
-    const cliente = await this.findByID(where)
+  async update(id, data) {
+    const cliente = await this.findByID(id)
 
     return await cliente.update(data);
   }
 
-  async destroy(where) {
-    const cliente = await this.findByID(where);
+  async destroy(id) {
+    const cliente = await this.findByID(id);
 
     return cliente.destroy();
   }
