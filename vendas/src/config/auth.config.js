@@ -4,7 +4,7 @@ import Env from './environment.config';
 
 const validate = async (decoded) => {
   const Cliente = instances.getModel('cliente');
-  const cliente = await cliente.findByPk(decoded.id);
+  const cliente = await Cliente.findByPk(decoded.id);
   const isValid = !!cliente;
   const credentials = isValid ? cliente : null;
 
