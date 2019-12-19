@@ -1,19 +1,17 @@
 import { CREATED, NO_CONTENT } from 'http-status';
 import { authenticate, getToken } from '../utils/auth.utils';
-import ClientesDAO from './clientes.dao';
+import ClientesBusiness from './clientes.business';
 
-const clientesDAO = new ClientesDAO();
+const clientesBusiness = new ClientesBusiness();
 
 export default class ClientesController {
 
   async list(request, h) {
-    return await clientesDAO.findAll();
+    return await clientesBusiness.list(request);
   }
 
-  async detail({ params }, h) {
-    const { id } = params;
-
-    return await clientesDAO.findByID(id);
+  async detail(request, h) {
+    return await clientesBusiness.detail(request);
   }
 
   async login({ payload }, h) {
@@ -26,22 +24,18 @@ export default class ClientesController {
     return { cliente, token };
   }
 
-  async create({ payload }, h) {
-    const cliente = await clientesDAO.create(payload);
+  async create(request, h) {
+    const cliente = await clientesBusiness.create(request);
 
     return h.response(cliente).code(CREATED);
   }
 
-  async update({ payload, params }, h) {
-    const { id } = params;
-
-    return await clientesDAO.update(id, payload);
+  async update(request, h) {
+    return await clientesBusiness.update(request);
   }
 
-  async destroy({ params }, h) {
-    const { id } = params;
-
-    await clientesDAO.destroy(id);
+  async destroy(request, h) {
+    await clientesBusiness.destroy(request);
 
     return h.response().code(NO_CONTENT);
   }
