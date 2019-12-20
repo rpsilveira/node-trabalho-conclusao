@@ -5,8 +5,7 @@ const params = Joi.object({
 });
 
 const payload = Joi.object({
-  title: Joi.string().min(5).max(100).required(),
-  content: Joi.string().min(10).required()
+  clienteId: Joi.number().required()
 });
 
 export const detail = {
