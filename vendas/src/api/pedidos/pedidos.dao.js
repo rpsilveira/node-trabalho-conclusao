@@ -5,12 +5,18 @@ const Pedido = instances.getModel('pedido');
 
 export default class PedidosDAO {
 
-  async findAll(where) {
-    return Pedido.findAll({ where });
+  async findAll(params) {
+    return Pedido.findAll({ 
+      where: params,
+      include: [ 'clientes', 'itens' ]
+    });
   }
 
   async findByID(id) {
-    return getObjectOr404(Pedido, { where: { id } });
+    return getObjectOr404(Pedido, { 
+      where: { id },
+      include: [ 'clientes', 'itens' ]
+    });
   }
 
   async create(data) {

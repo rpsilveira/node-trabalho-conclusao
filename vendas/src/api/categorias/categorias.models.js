@@ -7,9 +7,5 @@ export default (sequelize, dataTypes) => {
     descricao: dataTypes.STRING,
   }, { sequelize, modelName: 'categoria', tableName: 'tb_categorias' });
 
- /* Categoria.associate = models => {
-    models.categoria.hasMany(models.produto);
-  }; */
-
   return Categoria;
 };

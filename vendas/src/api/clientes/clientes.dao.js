@@ -5,12 +5,18 @@ const Cliente = instances.getModel('cliente');
 
 export default class ClientesDAO {
 
-  async findAll(where) {
-    return Cliente.findAll({ where });
+  async findAll(params) {
+    return Cliente.findAll({
+      where: params,
+      attributes: { exclude: [ 'senha' ] }
+    });
   }
 
   async findByID(id) {
-    return getObjectOr404(Cliente, { where: { id } });
+    return getObjectOr404(Cliente, {
+      where: { id },
+      attributes: { exclude: [ 'senha' ] }
+    });
   }
 
   async create(data) {

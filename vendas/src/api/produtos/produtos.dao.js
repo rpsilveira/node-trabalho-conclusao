@@ -5,12 +5,18 @@ const Produto = instances.getModel('produto');
 
 export default class ProdutosDAO {
 
-  async findAll(where) {
-    return Produto.findAll({ where });
+  async findAll(params) {
+    return Produto.findAll({ 
+      where: params,
+      include: [ 'categoria' ]
+    });
   }
 
   async findByID(id) {
-    return getObjectOr404(Produto, { where: { id } });
+    return getObjectOr404(Produto, { 
+      where: { id } ,
+      include: [ 'categoria' ]
+    });
   }
 
   async create(data) {

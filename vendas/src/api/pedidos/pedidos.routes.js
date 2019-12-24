@@ -9,7 +9,7 @@ export default [
     path: '/pedidos',
     handler: controller.list,
     config: {
-      tags: ['api', 'pedidos'],
+      tags: ['api', 'pedidos', 'itens'],
     }
   },
   {
@@ -17,7 +17,7 @@ export default [
     path: '/pedidos/{id}',
     handler: controller.detail,
     config: {
-      tags: ['api', 'pedidos'],
+      tags: ['api', 'pedidos', 'itens'],
       validate: Schemas.detail
     }
   },
@@ -26,7 +26,7 @@ export default [
     path: '/pedidos',
     handler: controller.create,
     config: {
-      tags: ['api', 'pedidos'],
+      tags: ['api', 'pedidos', 'itens'],
       validate: Schemas.create
     }
   },
@@ -35,7 +35,7 @@ export default [
     path: '/pedidos/{id}',
     handler: controller.update,
     config: {
-      tags: ['api', 'pedidos'],
+      tags: ['api', 'pedidos', 'itens'],
       validate: Schemas.update
     }
   },
@@ -44,7 +44,7 @@ export default [
     path: '/pedidos/{id}',
     handler: controller.destroy,
     config: {
-      tags: ['api', 'pedidos'],
+      tags: ['api', 'pedidos', 'itens'],
       validate: Schemas.detail
     }
   }
