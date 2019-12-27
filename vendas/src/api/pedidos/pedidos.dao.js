@@ -8,19 +8,21 @@ export default class PedidosDAO {
   async findAll(params) {
     return Pedido.findAll({ 
       where: params,
-      include: [ 'clientes', 'itens' ]
+      include: [ 'itens' ]
     });
   }
 
   async findByID(id) {
     return getObjectOr404(Pedido, { 
       where: { id },
-      include: [ 'clientes', 'itens' ]
+      include: [ 'itens' ]
     });
   }
 
   async create(data) {
-    return Pedido.create(data);
+    return Pedido.create(data, {
+      include: [ 'itens' ]
+    });
   }
 
   async update(id, data) {

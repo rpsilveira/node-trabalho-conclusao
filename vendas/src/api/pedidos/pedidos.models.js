@@ -4,7 +4,7 @@ export default (sequelize, dataTypes) => {
   class Pedido extends Model {}
   
   Pedido.init({
-    valor: dataTypes.FLOAT
+    total: dataTypes.FLOAT
   }, { sequelize, modelName: 'pedido', tableName: 'tb_pedidos' });
 
   Pedido.associate = models => {
