@@ -29,7 +29,9 @@ export default class PedidosDAO {
   async update(id, data) {
     const pedido = await this.findByID(id);
 
-    return pedido.update(data);
+    return pedido.update(data, {
+      include: [ 'itens' ]
+    });
   }
 
   async destroy(id) {
