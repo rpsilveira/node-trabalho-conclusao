@@ -37,7 +37,7 @@ export default (sequelize, dataTypes) => {
     senha: dataTypes.STRING
   }, { sequelize, modelName: 'cliente', tableName: 'tb_clientes' });
 
-  Cliente.addHook('beforeCreate', async (cliente) => {
+  Cliente.addHook('beforeSave', async (cliente) => {
     const hash = await Bcrypt.hash(cliente.senha, 10);
     const cnpjcpfFormatado = await formataCnpjCpf(cliente.cnpjcpf);
 

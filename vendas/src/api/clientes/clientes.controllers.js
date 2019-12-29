@@ -36,7 +36,11 @@ export default class ClientesController {
   }
 
   async update(request, h) {
-    return await clientesBusiness.update(request);
+    try {
+      return await clientesBusiness.update(request);
+    } catch(err) {
+      throw Boom.badRequest(err.errors[0].message);
+    }
   }
 
   async destroy(request, h) {
