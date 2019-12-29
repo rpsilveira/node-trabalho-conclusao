@@ -12,6 +12,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@brazilian-utils/format-cnpj": "^0.1.9",
+    "@brazilian-utils/format-cpf": "^0.1.8",
+    "@brazilian-utils/is-valid-cnpj": "^1.0.0-alpha.3",
+    "@brazilian-utils/is-valid-cpf": "^1.0.0-alpha.3",
     "@hapi/boom": "^8.0.1",
     "@hapi/code": "^7.0.0",
     "@hapi/hapi": "^18.4.0",
