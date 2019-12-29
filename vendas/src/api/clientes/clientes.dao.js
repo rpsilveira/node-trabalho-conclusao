@@ -5,9 +5,9 @@ const Cliente = instances.getModel('cliente');
 
 export default class ClientesDAO {
 
-  async findAll(params) {
+  async findAll(where) {
     return Cliente.findAll({
-      where: params,
+      where,
       limit: 100,
       attributes: { exclude: [ 'senha' ] }
     });

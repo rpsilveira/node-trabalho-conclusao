@@ -7,7 +7,7 @@ const produtosBusiness = new ProdutosBusiness();
 export default class ProdutosController {
 
   async list(request, h) {
-    return await produtosBusiness.list(request);
+    return await produtosBusiness.list(request.query);
   }
 
   async detail(request, h) {

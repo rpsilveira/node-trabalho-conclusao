@@ -7,7 +7,7 @@ const categoriasBusiness = new CategoriasBusiness();
 export default class CategoriasController {
 
   async list(request, h) {
-    return await categoriasBusiness.list(request);
+    return await categoriasBusiness.list(request.query);
   }
 
   async detail(request, h) {

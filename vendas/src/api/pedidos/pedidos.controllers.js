@@ -7,7 +7,7 @@ const pedidosBusiness = new PedidosBusiness();
 export default class PedidosController {
 
   async list(request, h) {
-    return await pedidosBusiness.list(request);
+    return await pedidosBusiness.list(request.query);
   }
 
   async detail(request, h) {

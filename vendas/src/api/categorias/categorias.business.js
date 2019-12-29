@@ -4,8 +4,8 @@ const categoriasDAO = new CategoriasDAO();
 
 export default class CategoriasBusiness {
 
-  async list({ params }) {
-    return categoriasDAO.findAll(params);
+  async list(where) {
+    return categoriasDAO.findAll(where);
   }
 
   async detail({ params }) {

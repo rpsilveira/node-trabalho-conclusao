@@ -4,8 +4,8 @@ const produtosDAO = new ProdutosDAO();
 
 export default class ProdutosBusiness {
 
-  async list({ params }) {
-    return produtosDAO.findAll(params);
+  async list(where) {
+    return produtosDAO.findAll(where);
   }
 
   async detail({ params }) {

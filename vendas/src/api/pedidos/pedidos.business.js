@@ -4,8 +4,8 @@ const pedidosDAO = new PedidosDAO();
 
 export default class PedidosBusiness {
 
-  async list({ params }) {
-    return pedidosDAO.findAll(params);
+  async list(where) {
+    return pedidosDAO.findAll(where);
   }
 
   async detail({ params }) {

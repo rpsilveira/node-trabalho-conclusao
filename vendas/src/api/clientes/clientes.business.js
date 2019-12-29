@@ -4,8 +4,8 @@ const clientesDAO = new ClientesDAO();
 
 export default class ClientesBusiness {
 
-  async list({ params }) {
-    return clientesDAO.findAll(params);
+  async list(where) {
+    return clientesDAO.findAll(where);
   }
 
   async detail({ params }) {

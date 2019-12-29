@@ -8,7 +8,7 @@ const clientesBusiness = new ClientesBusiness();
 export default class ClientesController {
 
   async list(request, h) {
-    return await clientesBusiness.list(request);
+    return await clientesBusiness.list(request.query);
   }
 
   async detail(request, h) {
