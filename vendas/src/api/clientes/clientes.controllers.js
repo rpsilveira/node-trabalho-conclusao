@@ -1,3 +1,4 @@
+import Boom from '@hapi/boom';
 import { CREATED, NO_CONTENT } from 'http-status';
 import { authenticate, getToken } from '../utils/auth.utils';
 import ClientesBusiness from './clientes.business';
@@ -25,9 +26,13 @@ export default class ClientesController {
   }
 
   async create(request, h) {
-    const cliente = await clientesBusiness.create(request);
-
-    return h.response(cliente).code(CREATED);
+    try {
+      const cliente = await clientesBusiness.create(request);
+      
+      return h.response(cliente).code(CREATED);          
+    } catch(err) {
+      throw Boom.badRequest(err.errors[0].message);
+    }
   }
 
   async update(request, h) {

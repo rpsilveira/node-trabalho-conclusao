@@ -6,8 +6,23 @@ export default (sequelize, dataTypes) => {
 
   Cliente.init({
     nome: dataTypes.STRING,
-    cnpjcpf: { type: dataTypes.STRING, unique: true },
-    email: { type: dataTypes.STRING, unique: true },
+    cnpjcpf: {
+      type: dataTypes.STRING,
+      unique: {
+        args: true,
+        msg: 'CNPJ/CPF já cadastrado!'
+      }  
+    },
+    email: {
+      type: dataTypes.STRING,
+      validate: {
+        isEmail: true
+      },
+      unique: {
+        args: true,
+        msg: 'E-mail já cadastrado!'
+      }      
+    },
     senha: dataTypes.STRING
   }, { sequelize, modelName: 'cliente', tableName: 'tb_clientes' });
 
