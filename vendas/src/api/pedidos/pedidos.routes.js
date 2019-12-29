@@ -26,8 +26,8 @@ export default [
     path: '/pedidos',
     handler: controller.create,
     config: {
-      tags: ['api', 'pedidos', 'itens']
-      //validate: Schemas.create
+      tags: ['api', 'pedidos'],
+      validate: Schemas.create
     }
   },
   {

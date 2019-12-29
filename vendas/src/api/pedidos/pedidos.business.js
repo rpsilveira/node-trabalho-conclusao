@@ -14,10 +14,8 @@ export default class PedidosBusiness {
     return pedidosDAO.findByID(id);
   }
 
-  async create({ payload, auth }) {
-    const { id: clienteId } = auth.credentials;
-
-    return pedidosDAO.create({ ...payload, clienteId });
+  async create({ payload }) {
+    return pedidosDAO.create(payload);
   }
 
   async update({ params, payload }) {

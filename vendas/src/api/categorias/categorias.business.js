@@ -14,10 +14,8 @@ export default class CategoriasBusiness {
     return categoriasDAO.findByID(id);
   }
 
-  async create({ payload, auth }) {
-    const { id: clienteId } = auth.credentials;
-
-    return categoriasDAO.create({ ...payload, clienteId });
+  async create({ payload }) {
+    return categoriasDAO.create(payload);
   }
 
   async update({ params, payload }) {
