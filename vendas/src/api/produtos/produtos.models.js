@@ -5,8 +5,8 @@ export default (sequelize, dataTypes) => {
 
   Produto.init({
     descricao: dataTypes.STRING,
-    quantidade: dataTypes.FLOAT,
-    valor: dataTypes.FLOAT
+    quantidade: dataTypes.REAL,
+    valor: dataTypes.REAL
   }, { sequelize, modelName: 'produto', tableName: 'tb_produtos' });
 
   Produto.associate = models => {
