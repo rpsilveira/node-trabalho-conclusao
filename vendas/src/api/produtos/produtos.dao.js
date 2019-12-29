@@ -6,7 +6,7 @@ const Produto = instances.getModel('produto');
 export default class ProdutosDAO {
 
   async findAll(where) {
-    return Produto.findAll({ where });
+    return Produto.findAll({ where, limit: 100 });
   }
 
   async findByID(id) {

@@ -8,6 +8,7 @@ export default class ClientesDAO {
   async findAll(params) {
     return Cliente.findAll({
       where: params,
+      limit: 100,
       attributes: { exclude: [ 'senha' ] }
     });
   }

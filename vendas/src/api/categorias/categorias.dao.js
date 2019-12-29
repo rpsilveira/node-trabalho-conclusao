@@ -6,7 +6,7 @@ const Categoria = instances.getModel('categoria');
 export default class CategoriasDAO {
 
   async findAll(where) {
-    return Categoria.findAll({ where });
+    return Categoria.findAll({ where, limit: 100 });
   }
 
   async findByID(id) {

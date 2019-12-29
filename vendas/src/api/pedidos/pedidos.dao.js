@@ -8,6 +8,7 @@ export default class PedidosDAO {
   async findAll(params) {
     return Pedido.findAll({ 
       where: params,
+      limit: 100,
       include: [ 'itens' ]
     });
   }
