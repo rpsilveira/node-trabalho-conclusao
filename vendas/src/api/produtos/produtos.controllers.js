@@ -21,11 +21,10 @@ export default class ProdutosController {
 
       return h.response(produto).code(CREATED);
     } catch(err) {
-      console.log(err);
       if (err.name == 'SequelizeForeignKeyConstraintError')
         throw Boom.badRequest('Houve violação de chave estrangeira. Verifique os dados e tente novamente');
       else
-        throw Boom.internal('Ocorreu um erro ao incluir o produto. Por favor, tente novamente');
+        throw Boom.badRequest(err.errors[0].message);
     }
   }
 
@@ -33,11 +32,10 @@ export default class ProdutosController {
     try {
       return await produtosBusiness.update(request);
     } catch(err) {
-      console.log(err);
       if (err.name == 'SequelizeForeignKeyConstraintError')
         throw Boom.badRequest('Houve violação de chave estrangeira. Verifique os dados e tente novamente');
       else
-        throw Boom.internal('Ocorreu um erro ao alterar o produto. Por favor, tente novamente');
+        throw Boom.badRequest(err.errors[0].message);
     }
   }
 
