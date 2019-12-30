@@ -1,0 +1,772 @@
+{
+	"info": {
+		"_postman_id": "51225c3d-1d76-4f27-9455-a5eb39cb504e",
+		"name": "vendas-node",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "categorias",
+			"item": [
+				{
+					"name": "cadastra categoria",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJqb2Fvc2lsdmFAZ21haWwuY29tIiwiaWF0IjoxNTc3NjM5MTc2LCJleHAiOjE1Nzc3MjU1NzZ9.nVlHVmgRxj7yqyKXp7kpPSThsrinO0B6p_nW6Hlo2z0",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"descricao\": \"Teste\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/categorias",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"categorias"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "consulta categoria",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJqb2FvQGdtYWlsLmNvbSIsImlhdCI6MTU3NzYzNTI5OCwiZXhwIjoxNTc3NzIxNjk4fQ.4RfWYvoaM_c0FamwHEio_VevpNIyGdpDlIPv_x_rBek"
+							}
+						],
+						"url": {
+							"raw": "localhost:3000/categorias/1",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"categorias",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "consulta categorias",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJqb2FvQGdtYWlsLmNvbSIsImlhdCI6MTU3NzYzNTI5OCwiZXhwIjoxNTc3NzIxNjk4fQ.4RfWYvoaM_c0FamwHEio_VevpNIyGdpDlIPv_x_rBek",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:3000/categorias?descricao=teste",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"categorias"
+							],
+							"query": [
+								{
+									"key": "descricao",
+									"value": "teste"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "atualiza categoria",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJhQGIuY29tIiwiaWF0IjoxNTc2NzE2OTAzLCJleHAiOjE1NzY4MDMzMDN9.9aa1eMdmdn7OG61lmqeVr9ZqZpuQyP8M3_lGuROSopY",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"descricao\": \"Teste novo\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/categorias/1",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"categorias",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "apaga categoria",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiOiJqb2FvQGdtYWlsLmNvbSIsImlhdCI6MTU3Njc5MzQxMCwiZXhwIjoxNTc2ODc5ODEwfQ.WylkuFyE4jKeJtYiSpZHx-5XHMCaOMZq9hlhsUusu6U",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:3000/categorias/1",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"categorias",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "clientes",
+			"item": [
+				{
+					"name": "cadastra cliente",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"nome\": \"João da Silva\",\n\t\"cnpjcpf\": \"09.728.322/0001-26\",\n\t\"email\": \"joaosilva@gmail.com\",\n\t\"senha\": \"123456\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/clientes",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"clientes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "obtem token acesso cliente",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"nome\": \"João da Silva\",\n\t\"cnpjcpf\": \"09.728.322/0001-26\",\n\t\"email\": \"joaosilva@gmail.com\",\n\t\"senha\": \"123456\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/clientes/login",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"clientes",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "consulta cliente",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJqb2FvQGdtYWlsLmNvbSIsImlhdCI6MTU3Njc5MzAyMiwiZXhwIjoxNTc2ODc5NDIyfQ.lZBFiht2pTcDtTPGy3pD67toc8jZwQvNgamTvo03CQQ"
+							}
+						],
+						"url": {
+							"raw": "localhost:3000/clientes/1",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"clientes",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "consulta clientes",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJqb2FvQGdtYWlsLmNvbSIsImlhdCI6MTU3Njc5MzAyMiwiZXhwIjoxNTc2ODc5NDIyfQ.lZBFiht2pTcDtTPGy3pD67toc8jZwQvNgamTvo03CQQ"
+							}
+						],
+						"url": {
+							"raw": "localhost:3000/clientes?nome=Jose",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"clientes"
+							],
+							"query": [
+								{
+									"key": "nome",
+									"value": "Jose"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "atualiza cliente",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJqb2FvQGdtYWlsLmNvbSIsImlhdCI6MTU3Njc5MzAyMiwiZXhwIjoxNTc2ODc5NDIyfQ.lZBFiht2pTcDtTPGy3pD67toc8jZwQvNgamTvo03CQQ",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"nome\": \"João da Silva 2\",\n\t\"cnpjcpf\": \"00000000000\",\n\t\"email\": \"joao2@gmail.com\",\n\t\"senha\": \"1234567\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/clientes/1",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"clientes",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "apaga cliente",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJqb2FvQGdtYWlsLmNvbSIsImlhdCI6MTU3Njc5MzAyMiwiZXhwIjoxNTc2ODc5NDIyfQ.lZBFiht2pTcDtTPGy3pD67toc8jZwQvNgamTvo03CQQ",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:3000/clientes/1",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"clientes",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "produtos",
+			"item": [
+				{
+					"name": "cadastra produto",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJqb2Fvc2lsdmFAZ21haWwuY29tIiwiaWF0IjoxNTc3NjM5MTc2LCJleHAiOjE1Nzc3MjU1NzZ9.nVlHVmgRxj7yqyKXp7kpPSThsrinO0B6p_nW6Hlo2z0"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"descricao\": \"teste\",\n\t\"quantidade\": 10,\n\t\"valor\": 510,\n\t\"categoriaId\": 6\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/produtos",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"produtos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "consulta produto",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJqb2FvQGdtYWlsLmNvbSIsImlhdCI6MTU3Njc5NjAwMiwiZXhwIjoxNTc2ODgyNDAyfQ.U7Jm9-tGCIUHfJ4EpTZKn71GcXvRsUQzqqJ1E7PP5nA"
+							}
+						],
+						"url": {
+							"raw": "localhost:3000/produtos/1",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"produtos",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "consulta produtos",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJqb2FvQGdtYWlsLmNvbSIsImlhdCI6MTU3Njc5NjAwMiwiZXhwIjoxNTc2ODgyNDAyfQ.U7Jm9-tGCIUHfJ4EpTZKn71GcXvRsUQzqqJ1E7PP5nA",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:3000/produtos?descricao=teste",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"produtos"
+							],
+							"query": [
+								{
+									"key": "descricao",
+									"value": "teste"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "atualiza produto",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJqb2FvQGdtYWlsLmNvbSIsImlhdCI6MTU3NzYzNTI5OCwiZXhwIjoxNTc3NzIxNjk4fQ.4RfWYvoaM_c0FamwHEio_VevpNIyGdpDlIPv_x_rBek"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"descricao\": \"teste20\",\n\t\"quantidade\": 10,\n\t\"valor\": 510,\n\t\"categoriaId\": 4\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/produtos/1",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"produtos",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "apaga produto",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJqb2FvQGdtYWlsLmNvbSIsImlhdCI6MTU3Njc5NjAwMiwiZXhwIjoxNTc2ODgyNDAyfQ.U7Jm9-tGCIUHfJ4EpTZKn71GcXvRsUQzqqJ1E7PP5nA"
+							}
+						],
+						"url": {
+							"raw": "localhost:3000/produtos/1",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"produtos",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "pedidos",
+			"item": [
+				{
+					"name": "cadastra pedido",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiOiJqb2Fvc2lsdmFAZ21haWwuY29tIiwiaWF0IjoxNTc3NzI2MTAwLCJleHAiOjE1Nzc4MTI1MDB9.04a1D1metJpW_zGWXNH3hwRl2M9MoT7j-NRd0_tDvQA"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"clienteId\": 20,\n    \"itens\": [\n        {\n            \"quantidade\": 123,\n            \"valor\": 20,\n            \"produtoId\": 2\n        },\n        {\n            \"quantidade\": 3,\n            \"valor\": 99,\n            \"produtoId\": 3\n        },\n        {\n            \"quantidade\": 100,\n            \"valor\": 20,\n            \"produtoId\": 4\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/pedidos",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"pedidos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "consulta pedido",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJqb2FvQGdtYWlsLmNvbSIsImlhdCI6MTU3NzQwMjkxOCwiZXhwIjoxNTc3NDg5MzE4fQ.W-9It5RJ95f1nxesgVwOjo7Zs9ZfZD83lbNIxXYQ6nQ"
+							}
+						],
+						"url": {
+							"raw": "localhost:3000/pedidos/1",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"pedidos",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "consulta pedidos",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJqb2FvQGdtYWlsLmNvbSIsImlhdCI6MTU3NzQwMjkxOCwiZXhwIjoxNTc3NDg5MzE4fQ.W-9It5RJ95f1nxesgVwOjo7Zs9ZfZD83lbNIxXYQ6nQ"
+							}
+						],
+						"url": {
+							"raw": "localhost:3000/pedidos?clienteId=5",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"pedidos"
+							],
+							"query": [
+								{
+									"key": "clienteId",
+									"value": "5"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "atualiza pedido",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJqb2FvQGdtYWlsLmNvbSIsImlhdCI6MTU3NzQwMjkxOCwiZXhwIjoxNTc3NDg5MzE4fQ.W-9It5RJ95f1nxesgVwOjo7Zs9ZfZD83lbNIxXYQ6nQ"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"valor\": 100,\n    \"clienteId\": 1,\n    \"itens\": [\n        {\n            \"quantidade\": 10,\n            \"valor\": 20,\n            \"produtoId\": 2\n        },\n        {\n            \"quantidade\": 3,\n            \"valor\": 99,\n            \"produtoId\": 3\n        },\n        {\n            \"quantidade\": 100,\n            \"valor\": 20,\n            \"produtoId\": 4\n        }\n   ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/pedidos/1",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"pedidos",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "apaga pedido",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJqb2FvQGdtYWlsLmNvbSIsImlhdCI6MTU3NzQwMjkxOCwiZXhwIjoxNTc3NDg5MzE4fQ.W-9It5RJ95f1nxesgVwOjo7Zs9ZfZD83lbNIxXYQ6nQ"
+							}
+						],
+						"url": {
+							"raw": "localhost:3000/pedidos/1",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"pedidos",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
