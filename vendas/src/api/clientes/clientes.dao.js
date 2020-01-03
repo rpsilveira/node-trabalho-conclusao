@@ -21,7 +21,9 @@ export default class ClientesDAO {
   }
 
   async create(data) {
-    return Cliente.create(data);
+    const cliente = await Cliente.create(data);
+    
+    return await this.findByID(cliente.id);
   }
 
   async update(id, data) {
