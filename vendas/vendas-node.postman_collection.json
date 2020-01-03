@@ -712,7 +712,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"valor\": 100,\n    \"clienteId\": 1,\n    \"itens\": [\n        {\n            \"quantidade\": 10,\n            \"valor\": 20,\n            \"produtoId\": 2\n        },\n        {\n            \"quantidade\": 3,\n            \"valor\": 99,\n            \"produtoId\": 3\n        },\n        {\n            \"quantidade\": 100,\n            \"valor\": 20,\n            \"produtoId\": 4\n        }\n   ]\n}",
+							"raw": "{\n    \"clienteId\": 4,\n    \"itens\": [\n        {\n            \"quantidade\": 123,\n            \"valor\": 20,\n            \"produtoId\": 2\n        },\n        {\n            \"quantidade\": 3,\n            \"valor\": 99,\n            \"produtoId\": 3\n        },\n        {\n            \"quantidade\": 10,\n            \"valor\": 20,\n            \"produtoId\": 1\n        }\n    ]\n}",
 							"options": {
 								"raw": {
 									"language": "json"

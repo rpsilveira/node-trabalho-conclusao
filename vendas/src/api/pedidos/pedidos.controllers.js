@@ -24,7 +24,7 @@ export default class PedidosController {
       if (err.name == 'SequelizeForeignKeyConstraintError')
         throw Boom.badRequest('Houve violação de chave estrangeira. Verifique os dados e tente novamente');
       else
-        throw Boom.badRequest(err.errors[0].message);
+        throw Boom.badRequest(err);
     }
   }
 
@@ -35,7 +35,7 @@ export default class PedidosController {
       if (err.name == 'SequelizeForeignKeyConstraintError')
         throw Boom.badRequest('Houve violação de chave estrangeira. Verifique os dados e tente novamente');
       else
-        throw Boom.badRequest(err.errors[0].message);
+        throw Boom.badRequest(err);
     }    
   }
 

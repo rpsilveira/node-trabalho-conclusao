@@ -31,7 +31,7 @@ export default class ClientesController {
       
       return h.response(cliente).code(CREATED);          
     } catch(err) {
-      throw Boom.badRequest(err.errors[0].message);
+      throw Boom.badRequest(err);
     }
   }
 
@@ -39,7 +39,7 @@ export default class ClientesController {
     try {
       return await clientesBusiness.update(request);
     } catch(err) {
-      throw Boom.badRequest(err.errors[0].message);
+      throw Boom.badRequest(err);
     }
   }
 
